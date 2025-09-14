@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🗂️ Kho Tài Liệu Chung - Nhóm ABC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            padding-left: 50px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #999;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .content {
+            display: grid;
+            gap: 30px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .file-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+
+        .file-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .file-item:hover::before {
+            opacity: 1;
+        }
+
+        .file-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .file-icon {
+            font-size: 2em;
+            flex-shrink: 0;
+        }
+
+        .file-info {
+            flex: 1;
+        }
+
+        .file-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .file-description {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .file-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .folder-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .folder-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+        }
+
+        .folder-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .folder-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .folder-count {
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+
+        .new-badge {
+            background: #ff4757;
+            color: white;
+            font-size: 0.7em;
+            padding: 3px 8px;
+            border-radius: 10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 8px 16px;
+            background: #e9ecef;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .filter-tab.active {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .file-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                gap: 15px;
+            }
+        }
+
+        .upload-zone {
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            background: rgba(102, 126, 234, 0.05);
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upload-zone:hover {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: #764ba2;
+        }
+
+        .upload-zone input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>🗂️ KHO TÀI LIỆU CHUNG</h1>
+            <p>Nền tảng chia sẻ tài liệu dành cho Nhóm ABC - 20 thành viên</p>
+            
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-box" placeholder="Tìm kiếm tài liệu..." id="searchInput">
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">📁 <strong>6</strong> Thư mục</div>
+                <div class="stat-item">📄 <strong>24</strong> Tài liệu</div>
+                <div class="stat-item">📈 <strong>3</strong> Mới hôm nay</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Recent Files Section -->
+            <div class="section">
+                <div class="section-title">
+                    📋 TÀI LIỆU MỚI NHẤT
+                </div>
+                
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">Tất cả</button>
+                    <button class="filter-tab" data-filter="pdf">PDF</button>
+                    <button class="filter-tab" data-filter="excel">Excel</button>
+                    <button class="filter-tab" data-filter="word">Word</button>
+                    <button class="filter-tab" data-filter="image">Hình ảnh</button>
+                </div>
+
+                <div class="file-grid" id="recentFiles">
+                    <div class="file-item" data-type="pdf">
+                        <div class="new-badge">MỚI</div>
+                        <div class="file-header">
+                            <div class="file-icon">📄</div>
+                            <div class="file-info">
+                                <div class="file-name">Báo cáo tháng 9_v2.1.pdf</div>
+                                <div class="file-description">Báo cáo chi tiết về tình hình hoạt động tháng 9, bao gồm KPI và đánh giá hiệu suất.</div>
+                                <div class="file-meta">
+                                    <span>👤 Nguyễn Văn A</span>
+                                    <span>📅 15/09/2025</span>
+                                    <span>💾 2.3 MB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="download-btn" onclick="downloadFile('baocao_thang9_v2.1.pdf')">
+                            ⬇️ TẢI VỀ
+                        </button>
+                    </div>
+
+                    <div class="file-item" data-type="excel">
+                        <div class="new-badge">MỚI</div>
+                        <div class="file-header">
+                            <div class="file-icon">📊</div>
+                            <div class="file-info">
+                                <div class="file-name">Template_Excel_moi.xlsx</div>
+                                <div class="file-description">Template Excel chuẩn cho việc tạo báo cáo, có sẵn công thức và định dạng.</div>
+                                <div class="file-meta">
+                                    <span>👤 Trần Thị B</span>
+                                    <span>📅 14/09/2025</span>
+                                    <span>💾 1.8 MB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="download-btn" onclick="downloadFile('template_excel_moi.xlsx')">
+                            ⬇️ TẢI VỀ
+                        </button>
+                    </div>
+
+                    <div class="file-item" data-type="pdf">
+                        <div class="file-header">
+                            <div class="file-icon">📋</div>
+                            <div class="file-info">
+                                <div class="file-name">Hướng dẫn sử dụng hệ thống.pdf</div>
+                                <div class="file-description">Tài liệu hướng dẫn chi tiết cách sử dụng các tính năng của hệ thống.</div>
+                                <div class="file-meta">
+                                    <span>👤 Lê Văn C</span>
+                                    <span>📅 13/09/2025</span>
+                                    <span>💾 5.2 MB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="download-btn" onclick="downloadFile('huong_dan_su_dung.pdf')">
+                            ⬇️ TẢI VỀ
+                        </button>
+                    </div>
+
+                    <div class="file-item" data-type="word">
+                        <div class="file-header">
+                            <div class="file-icon">📝</div>
+                            <div class="file-info">
+                                <div class="file-name">Mẫu đơn xin nghỉ phép.docx</div>
+                                <div class="file-description">Template chuẩn cho đơn xin nghỉ phép, đã được phê duyệt bởi HR.</div>
+                                <div class="file-meta">
+                                    <span>👤 Phạm Thị D</span>
+                                    <span>📅 12/09/2025</span>
+                                    <span>💾 0.5 MB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="download-btn" onclick="downloadFile('mau_don_nghi_phep.docx')">
+                            ⬇️ TẢI VỀ
+                        </button>
+                    </div>
+
+                    <div class="file-item" data-type="image">
+                        <div class="new-badge">MỚI</div>
+                        <div class="file-header">
+                            <div class="file-icon">🖼️</div>
+                            <div class="file-info">
+                                <div class="file-name">Logo_công_ty_mới.png</div>
+                                <div class="file-description">Logo mới của công ty với độ phân giải cao, phù hợp cho in ấn và web.</div>
+                                <div class="file-meta">
+                                    <span>👤 Designer Team</span>
+                                    <span>📅 14/09/2025</span>
+                                    <span>💾 3.1 MB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="download-btn" onclick="downloadFile('logo_cong_ty_moi.png')">
+                            ⬇️ TẢI VỀ
+                        </button>
+                    </div>
+
+                    <div class="file-item" data-type="pdf">
+                        <div class="file-header">
+                            <div class="file-icon">📊</div>
+                            <div class="file-info">
+                                <div class="file-name">Kế hoạch Q4-2025.pdf</div>
+                                <div class="file-description">Kế hoạch chi tiết cho quý 4 năm 2025, bao gồm mục tiêu và kế hoạch hành động.</div>
+                                <div class="file-meta">
+                                    <span>👤 Ban Giám Đốc</span>
+                                    <span>📅 10/09/2025</span>
+                                    <span>💾 4.7 MB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="download-btn" onclick="downloadFile('ke_hoach_q4_2025.pdf')">
+                            ⬇️ TẢI VỀ
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Folders Section - CÁC THƯ MỤC THEO TÊN THẬT CỦA BẠN -->
+            <div class="section">
+                <div class="section-title">
+                    📂 DANH MỤC CHÍNH
+                </div>
+                
+                <div class="file-grid">
+                    <div class="folder-item" onclick="openFolder('chia-se-tu-thanh-vien')">
+                        <div class="folder-icon">🤝</div>
+                        <div class="folder-name">Chia sẻ từ thành viên</div>
+                        <div class="folder-count">9 file</div>
+                    </div>
+
+                    <div class="folder-item" onclick="openFolder('danh-sach-diem-dieu-kien')">
+                        <div class="folder-icon">📊</div>
+                        <div class="folder-name">DANH SÁCH ĐIỂM ĐIỀU KIỆN</div>
+                        <div class="folder-count">12 file</div>
+                    </div>
+
+                    <div class="folder-item" onclick="openFolder('hinh-anh-media')">
+                        <div class="folder-icon">🖼️</div>
+                        <div class="folder-name">Hình ảnh & Media</div>
+                        <div class="folder-count">25 file</div>
+                    </div>
+
+                    <div class="folder-item" onclick="openFolder('huong-dan-su-dung')">
+                        <div class="folder-icon">📚</div>
+                        <div class="folder-name">Hướng dẫn sử dụng</div>
+                        <div class="folder-count">8 tài liệu</div>
+                    </div>
+
+                    <div class="folder-item" onclick="openFolder('tai-lieu-tham-khao')">
+                        <div class="folder-icon">📄</div>
+                        <div class="folder-name">Tài liệu tham khảo</div>
+                        <div class="folder-count">15 file</div>
+                    </div>
+
+                    <div class="folder-item" onclick="openFolder('van-ban-dao-tao')">
+                        <div class="folder-icon">🎓</div>
+                        <div class="folder-name">VĂN BẢN ĐÀO TẠO</div>
+                        <div class="folder-count">18 file</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="section">
+                <div class="section-title">
+                    📤 TẢI LÊN TÀI LIỆU MỚI
+                </div>
+                
+                <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+                    <input type="file" id="fileInput" multiple onchange="handleFileUpload(event)">
+                    <div style="font-size: 2em; margin-bottom: 10px;">📤</div>
+                    <div style="font-size: 1.2em; margin-bottom: 5px;">Nhấp để chọn file hoặc kéo thả vào đây</div>
+                    <div style="color: #666; font-size: 0.9em;">Hỗ trợ: PDF, DOC, XLS, PPT, IMG (Tối đa 50MB mỗi file)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const fileItems = document.querySelectorAll('.file-item');
+            
+            fileItems.forEach(item => {
+                const fileName = item.querySelector('.file-name').textContent.toLowerCase();
+                const fileDescription = item.querySelector('.file-description').textContent.toLowerCase();
+                
+                if (fileName.includes(searchTerm) || fileDescription.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const fileItems = document.querySelectorAll('.file-item');
+                
+                fileItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-type') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Download file function - MỞ THƯ MỤC CHỨA FILE
+        function downloadFile(filename) {
+            // Ánh xạ từng file vào thư mục tương ứng
+            const fileFolderMapping = {
+                'baocao_thang9_v2.1.pdf': 'tai-lieu-tham-khao',
+                'template_excel_moi.xlsx': 'van-ban-dao-tao', 
+                'huong_dan_su_dung.pdf': 'huong-dan-su-dung',
+                'mau_don_nghi_phep.docx': 'van-ban-dao-tao',
+                'logo_cong_ty_moi.png': 'hinh-anh-media',
+                'ke_hoach_q4_2025.pdf': 'danh-sach-diem-dieu-kien'
+            };
+            
+            // THAY THẾ CÁC FOLDER ID THẬT VÀO ĐÂY ↓↓↓
+            const folderLinks = {
+                'chia-se-tu-thanh-vien': 'https://drive.google.com/drive/folders/1F0X7SU1MR0elqPrBxuDvdRaK-vjY1rbI',
+                'danh-sach-diem-dieu-kien': 'https://drive.google.com/drive/folders/1tyXjeMsdZKtGo1jowy9BFy2ZOiltPauO', 
+                'hinh-anh-media': 'https://drive.google.com/drive/folders/1GxtXCY0pBPuzeRNjsgj2J-vG4gC7g_29',
+                'huong-dan-su-dung': 'https://drive.google.com/drive/folders/15K9q_eDPV9iQvtinfF1Z8vhWU93PZe6c',
+                'tai-lieu-tham-khao': 'https://drive.google.com/drive/folders/1219Mq_dZMWDEKgqkBAeBQyxjjIGYOAyP',
+                'van-ban-dao-tao': 'https://drive.google.com/drive/folders/19OMo2EWsLhukHT9ZD3YhB0gnaIZQHzOj'
+            };
+            
+            const folderCategory = fileFolderMapping[filename];
+            
+            if (folderCategory && folderLinks[folderCategory]) {
+                window.open(folderLinks[folderCategory], '_blank');
+            } else {
+                alert(`📁 Sẽ mở thư mục chứa file: ${filename}\n\n💡 Để sử dụng:\n1. Lấy Folder ID từ Google Drive\n2. Thay vào code tại dòng folderLinks`);
+            }
+        }
+
+        // Open folder function - CLICK VÀO THƯ MỤC 
+        function openFolder(folderName) {
+            // THAY THẾ CÁC FOLDER ID THẬT VÀO ĐÂY ↓↓↓ 
+            const folderLinks = {
+                'chia-se-tu-thanh-vien': 'https://drive.google.com/drive/folders/1F0X7SU1MR0elqPrBxuDvdRaK-vjY1rbI',
+                'danh-sach-diem-dieu-kien': 'https://drive.google.com/drive/folders/1tyXjeMsdZKtGo1jowy9BFy2ZOiltPauO',
+                'hinh-anh-media': 'https://drive.google.com/drive/folders/1GxtXCY0pBPuzeRNjsgj2J-vG4gC7g_29', 
+                'huong-dan-su-dung': 'https://drive.google.com/drive/folders/15K9q_eDPV9iQvtinfF1Z8vhWU93PZe6c',
+                'tai-lieu-tham-khao': 'https://drive.google.com/drive/folders/1219Mq_dZMWDEKgqkBAeBQyxjjIGYOAyP',
+                'van-ban-dao-tao': 'https://drive.google.com/drive/folders/19OMo2EWsLhukHT9ZD3YhB0gnaIZQHzOj'
+            };
+            
+            const folderUrl = folderLinks[folderName];
+            
+            // Kiểm tra xem đã thay Folder ID thật chưa
+            if (folderUrl && !folderUrl.includes('FOLDER_ID_')) {
+                // Đã có Folder ID thật -> Mở Google Drive
+                window.open(folderUrl, '_blank');
+            } else {
+                // Chưa có Folder ID thật -> Hiển thị hướng dẫn
+                alert(`🔧 CHƯA CẤU HÌNH FOLDER ID!\n\n📁 Thư mục: ${getFolderDisplayName(folderName)}\n\n💡 Cách thiết lập:\n\n1️⃣ Vào Google Drive\n2️⃣ Chuột phải thư mục "${getFolderDisplayName(folderName)}"\n3️⃣ Chọn "Chia sẻ" → "Mọi người có liên kết"\n4️⃣ Copy link thư mục\n5️⃣ Lấy Folder ID từ link\n6️⃣ Thay vào code tại dòng '${folderName}'\n\n🎯 Sau khi cấu hình, click sẽ mở thư mục Google Drive!`);
+            }
+        }
+        
+        // Hàm helper để lấy tên hiển thị của thư mục
+        function getFolderDisplayName(folderName) {
+            const displayNames = {
+                'chia-se-tu-thanh-vien': 'Chia sẻ từ thành viên',
+                'danh-sach-diem-dieu-kien': 'DANH SÁCH ĐIỂM ĐIỀU KIỆN',
+                'hinh-anh-media': 'Hình ảnh & Media',
+                'huong-dan-su-dung': 'Hướng dẫn sử dụng',
+                'tai-lieu-tham-khao': 'Tài liệu tham khảo',
+                'van-ban-dao-tao': 'VĂN BẢN ĐÀO TẠO'
+            };
+            return displayNames[folderName] || folderName;
+        }
+
+        // File upload handler
+        function handleFileUpload(event) {
+            const files = event.target.files;
+            if (files.length > 0) {
+                let fileNames = Array.from(files).map(file => file.name).join('\n');
+                alert(`Đã chọn ${files.length} file:\n${fileNames}\n\nLưu ý: Đây chỉ là demo. Trong thực tế cần tích hợp với Google Drive API!`);
+            }
+        }
+
+        // Drag and drop functionality
+        const uploadZone = document.querySelector('.upload-zone');
+        
+        uploadZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.style.background = 'rgba(102, 126, 234, 0.2)';
+        });
+        
+        uploadZone.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            this.style.background = 'rgba(102, 126, 234, 0.05)';
+        });
+        
+        uploadZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.style.background = 'rgba(102, 126, 234, 0.05)';
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                let fileNames = Array.from(files).map(file => file.name).join('\n');
+                alert(`Đã thả ${files.length} file:\n${fileNames}\n\nLưu ý: Đây chỉ là demo!`);
+            }
+        });
+
+        // Auto-refresh notification
+        setInterval(function() {
+            console.log('Checking for new files...');
+        }, 30000);
+    </script>
+</body>
+</html>
