@@ -365,7 +365,24 @@
                
 <div class="file-grid" id="recentFiles">
     <p style="text-align: center; padding: 40px; color: #666;">
-        Chưa có tài liệu mới. Sẽ cập nhật sớm!
+       <div class="file-item" data-type="pdf">
+    <div class="new-badge">MỚI</div>
+    <div class="file-header">
+        <div class="file-icon">📅</div>
+        <div class="file-info">
+            <div class="file-name">LỊCH THI THÁNG 9.2025.pdf</div>
+            <div class="file-description">Lịch thi chi tiết tháng 9 năm 2025, bao gồm thời gian và địa điểm thi.</div>
+            <div class="file-meta">
+                <span>👤 Ban Tổ Chức</span>
+                <span>📅 15/09/2025</span>
+                <span>💾 1.2 MB</span>
+            </div>
+        </div>
+    </div>
+    <button class="download-btn" onclick="downloadFile('lich_thi_thang9_2025')">
+        ⬇️ TẢI VỀ
+    </button>
+</div>
     </p>
 </div>
             <!-- Folders Section - CÁC THƯ MỤC THEO TÊN THẬT CỦA BẠN -->
@@ -472,6 +489,10 @@
         function downloadFile(filename) {
             // Ánh xạ từng file vào thư mục tương ứng
             const fileFolderMapping = {
+                 'lich_thi_thang9_2025': 'danh-sach-diem-dieu-kien',  // Thêm dòng này
+    'baocao_thang9_v2.1.pdf': 'tai-lieu-tham-khao',
+    // ... các file khác
+};
                 'baocao_thang9_v2.1.pdf': 'tai-lieu-tham-khao',
                 'template_excel_moi.xlsx': 'van-ban-dao-tao', 
                 'huong_dan_su_dung.pdf': 'huong-dan-su-dung',
@@ -482,6 +503,9 @@
             
             // THAY THẾ CÁC FOLDER ID THẬT VÀO ĐÂY ↓↓↓
             const folderLinks = {
+                const directDownloadLinks = {
+    'lich_thi_thang9_2025': 'https://drive.google.com/uc?export=download&id=11YqHd7eXed6mdjoIxldCzaaRrXYsVLI3'
+};
                 'chia-se-tu-thanh-vien': 'https://drive.google.com/drive/folders/1F0X7SU1MR0elqPrBxuDvdRaK-vjY1rbI',
                 'danh-sach-diem-dieu-kien': 'https://drive.google.com/drive/folders/1tyXjeMsdZKtGo1jowy9BFy2ZOiltPauO', 
                 'hinh-anh-media': 'https://drive.google.com/drive/folders/1GxtXCY0pBPuzeRNjsgj2J-vG4gC7g_29',
@@ -577,3 +601,4 @@
 </body>
 
 </html>
+
