@@ -215,7 +215,7 @@ Nguyên tắc tranh tụng tại Điều 26 có ý nghĩa thực tiễn đặc b
 
 ### 1. Vi phạm nghiêm trọng thủ tục tố tụng
 
-Theo Điều 4 khoản 1 điểm o BLTTHS, vi phạm nghiêm trọng thủ tục tố tụng là việc cơ quan, người có thẩm quyền tiến hành tố tụng trong quá trình khởi tố, điều tra, truy tố, xét xử không thực hiện hoặc thực hiện không đúng, không đầy đủ các trình tự, thủ tục do Bộ luật này quy định và đã xâm hại nghiêm trọng đến quyền, lợi ích hợp pháp của người tham gia tố tụng hoặc làm ảnh hưởng đến việc xác định sự thật khách quan, toàn diện của vụ án.
+Theo Điều 4 khoản 1 BLTTHS, vi phạm nghiêm trọng thủ tục tố tụng là việc cơ quan, người có thẩm quyền tiến hành tố tụng trong quá trình khởi tố, điều tra, truy tố, xét xử không thực hiện hoặc thực hiện không đúng, không đầy đủ các trình tự, thủ tục do Bộ luật này quy định và đã xâm hại nghiêm trọng đến quyền, lợi ích hợp pháp của người tham gia tố tụng hoặc làm ảnh hưởng đến việc xác định sự thật khách quan, toàn diện của vụ án.
 
 **Các trường hợp điển hình:**
 

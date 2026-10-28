@@ -1,0 +1,655 @@
+# PHỤ LỤC F. SƠ ĐỒ QUY TRÌNH TỐ TỤNG
+
+[Về mục lục](../README.md)
+
+---
+
+## SƠ ĐỒ 1. TOÀN BỘ TIẾN TRÌNH TỪ NGUỒN TIN ĐẾN KẾT THÚC ĐIỀU TRA
+
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│ NGUỒN TIN VỀ TỘI PHẠM                                                │
+│ Tố giác │ Tin báo │ Kiến nghị khởi tố │ Tự thú │ Trực tiếp phát hiện │
+└────────────────────────────────┬─────────────────────────────────────┘
+                                 ▼
+          ┌──────────────────────────────────────────────┐
+          │ TIẾP NHẬN (Điều 145, Điều 146)               │
+          │ - Lập biên bản tiếp nhận                     │
+          │ - Ghi sổ tiếp nhận                           │
+          │ - Giải thích quyền, nghĩa vụ                 │
+          │ - THÔNG BÁO VIỆN KIỂM SÁT TRONG 03 NGÀY      │
+          └──────────────────────┬───────────────────────┘
+                                 ▼
+                    ┌────────────────────────┐
+                    │ PHÂN LOẠI              │
+                    └───┬────┬────┬──────┬───┘
+         ┌──────────────┘    │    │      └──────────────┐
+         ▼                   ▼    ▼                     ▼
+┌─────────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│ Có dấu hiệu tội │ │ Có dấu hiệu  │ │ Chỉ vi phạm  │ │ Không vi     │
+│ phạm, THUỘC     │ │ tội phạm,    │ │ hành chính   │ │ phạm pháp    │
+│ thẩm quyền      │ │ KHÔNG thuộc  │ │              │ │ luật         │
+│                 │ │ thẩm quyền   │ │              │ │              │
+│ → Thụ lý        │ │ → Chuyển cơ  │ │ → Chuyển cơ  │ │ → Giải thích │
+│                 │ │   quan có    │ │   quan xử lý │ │   và trả lời │
+│                 │ │   thẩm quyền │ │   hành chính │ │              │
+└────────┬────────┘ └──────────────┘ └──────────────┘ └──────────────┘
+         ▼
+┌──────────────────────────────────────────────────────────────────┐
+│ GIẢI QUYẾT NGUỒN TIN (Điều 147)                                  │
+│ 20 NGÀY → kéo dài đến 02 THÁNG → gia hạn 02 THÁNG = tối đa 04 th.│
+│ Đề nghị gia hạn: CHẬM NHẤT 05 NGÀY TRƯỚC KHI HẾT HẠN             │
+│                                                                   │
+│ ĐƯỢC LÀM: thu thập tài liệu, lấy lời khai, khám nghiệm hiện      │
+│ trường, khám nghiệm tử thi, trưng cầu giám định, yêu cầu định     │
+│ giá, giữ người khẩn cấp, tạm giữ, tạm hoãn xuất cảnh              │
+│                                                                   │
+│ KHÔNG ĐƯỢC LÀM: hỏi cung, khám xét, kê biên, thực nghiệm điều    │
+│ tra, nhận dạng, đối chất, biện pháp điều tra tố tụng đặc biệt,   │
+│ tạm giam                                                          │
+└────────────────────────────┬─────────────────────────────────────┘
+                             ▼
+         ┌───────────────────────────────────────────┐
+         │ RA MỘT TRONG BA QUYẾT ĐỊNH                │
+         └────┬──────────────────┬───────────────┬───┘
+              ▼                  ▼               ▼
+    ┌──────────────────┐ ┌───────────────┐ ┌──────────────────┐
+    │ KHỞI TỐ VỤ ÁN    │ │ KHÔNG KHỞI TỐ │ │ TẠM ĐÌNH CHỈ     │
+    │ HÌNH SỰ          │ │ VỤ ÁN         │ │ GIẢI QUYẾT       │
+    │ (Điều 143, 154)  │ │ (Điều 157,158)│ │ (Điều 148)       │
+    │                  │ │               │ │                  │
+    │ Gửi VKS 24 giờ   │ │ Gửi VKS 24 giờ│ │ Gửi VKS 24 giờ   │
+    └────────┬─────────┘ └───────────────┘ └────────┬─────────┘
+             │                                      │
+             │                            Lý do không còn
+             │                                      ▼
+             │                          ┌──────────────────────┐
+             │                          │ PHỤC HỒI GIẢI QUYẾT  │
+             │                          │ (Điều 149)           │
+             │                          │ Tiếp 01 THÁNG        │
+             │                          └──────────┬───────────┘
+             │◄────────────────────────────────────┘
+             ▼
+┌──────────────────────────────────────────────────────────────────┐
+│ GIAI ĐOẠN ĐIỀU TRA                                               │
+│ Thời hạn (Điều 172): tính TỪ KHI KHỞI TỐ VỤ ÁN                   │
+│   Ít nghiêm trọng    02 th. + 1 lần 02 th.        = 04 THÁNG     │
+│   Nghiêm trọng       03 th. + 03 th. + 02 th.     = 08 THÁNG     │
+│   Rất nghiêm trọng   04 th. + 04 th. + 04 th.     = 12 THÁNG     │
+│   Đặc biệt ng.trọng  04 th. + 04 + 04 + 04 th.    = 16 THÁNG     │
+│ Đề nghị gia hạn: CHẬM NHẤT 10 NGÀY TRƯỚC KHI HẾT HẠN             │
+└────────────────────────────┬─────────────────────────────────────┘
+                             ▼
+┌──────────────────────────────────────────────────────────────────┐
+│ KHỞI TỐ BỊ CAN (Điều 179)                                        │
+│ → Gửi VKS trong 24 GIỜ để xét phê chuẩn                          │
+│ → VKS phê chuẩn hoặc hủy bỏ trong 03 NGÀY                        │
+│ → GIAO NGAY quyết định cho bị can + GIẢI THÍCH QUYỀN + BIÊN BẢN  │
+│                                                                   │
+│ MỞ KHÓA các thẩm quyền: hỏi cung, khám xét, kê biên tài sản,     │
+│ tạm giam, thực nghiệm điều tra, nhận dạng, đối chất, biện pháp   │
+│ điều tra tố tụng đặc biệt                                        │
+└────────────────────────────┬─────────────────────────────────────┘
+                             ▼
+┌──────────────────────────────────────────────────────────────────┐
+│ THỰC HIỆN ĐỒNG THỜI (KHÔNG TUẦN TỰ)                              │
+│ ├── Biện pháp ngăn chặn: bắt, tạm giam, cấm đi khỏi nơi cư trú,  │
+│ │   bảo lĩnh, đặt tiền, tạm hoãn xuất cảnh                       │
+│ ├── Khám xét tại tất cả địa điểm                                 │
+│ ├── Phong tỏa tài khoản tại tất cả tổ chức tín dụng              │
+│ ├── Kê biên tài sản                                              │
+│ └── Văn bản ngăn chặn giao dịch gửi cơ quan đăng ký               │
+└────────────────────────────┬─────────────────────────────────────┘
+                             ▼
+┌──────────────────────────────────────────────────────────────────┐
+│ CÁC HOẠT ĐỘNG ĐIỀU TRA                                           │
+│ Hỏi cung bị can │ Lấy lời khai │ Đối chất │ Nhận dạng │ Nhận biết │
+│ giọng nói │ Khám xét │ Thu giữ, tạm giữ │ Khám nghiệm hiện trường │
+│ Khám nghiệm tử thi │ Xem xét dấu vết trên thân thể │ Thực nghiệm  │
+│ điều tra │ Trưng cầu giám định │ Yêu cầu định giá │ Ủy thác điều  │
+│ tra │ Biện pháp điều tra tố tụng đặc biệt                        │
+└────────────────────────────┬─────────────────────────────────────┘
+                             ▼
+         ┌───────────────────────────────────────────┐
+         │ KẾT THÚC GIAI ĐOẠN ĐIỀU TRA               │
+         └────┬──────────────────┬───────────────┬───┘
+              ▼                  ▼               ▼
+  ┌────────────────────┐ ┌──────────────┐ ┌─────────────────────┐
+  │ KẾT LUẬN ĐIỀU TRA  │ │ ĐÌNH CHỈ     │ │ TẠM ĐÌNH CHỈ        │
+  │ ĐỀ NGHỊ TRUY TỐ    │ │ ĐIỀU TRA     │ │ ĐIỀU TRA            │
+  │ (Điều 232, 233)    │ │ (Điều 230)   │ │ (Điều 229)          │
+  │                    │ │              │ │                     │
+  │ 02 NGÀY:           │ │ VKS xem xét  │ │ 02 NGÀY: gửi VKS,   │
+  │ - Giao VKS + hồ sơ │ │ trong 15 NGÀY│ │ bị can, người bào   │
+  │ - Giao bị can      │ │              │ │ chữa; thông báo bị  │
+  │ - Gửi người bào    │ │              │ │ hại, đương sự       │
+  │   chữa             │ │              │ │                     │
+  │ - Thông báo bị hại │ │              │ │ Lý do không còn →   │
+  │                    │ │              │ │ PHỤC HỒI ĐIỀU TRA   │
+  │                    │ │              │ │ (Điều 235)          │
+  └─────────┬──────────┘ └──────────────┘ └─────────────────────┘
+            ▼
+┌──────────────────────────────────────────────────────────────────┐
+│ GIAI ĐOẠN TRUY TỐ (Điều 240)                                     │
+│ Ít nghiêm trọng, nghiêm trọng: 20 NGÀY (+10)                     │
+│ Rất nghiêm trọng:              30 NGÀY (+15)                     │
+│ Đặc biệt nghiêm trọng:         30 NGÀY (+30)                     │
+└────┬──────────────────┬───────────────┬──────────────────────────┘
+     ▼                  ▼               ▼
+┌──────────┐ ┌─────────────────────┐ ┌─────────────────────┐
+│ TRUY TỐ  │ │ TRẢ HỒ SƠ ĐIỀU TRA  │ │ ĐÌNH CHỈ /          │
+│          │ │ BỔ SUNG (Điều 245)  │ │ TẠM ĐÌNH CHỈ VỤ ÁN  │
+│          │ │ 02 THÁNG, tối đa    │ │                     │
+│          │ │ 02 LẦN              │ │                     │
+└────┬─────┘ └──────────┬──────────┘ └─────────────────────┘
+     │                  │
+     │                  └──────► Trở lại giai đoạn điều tra
+     ▼
+┌──────────────────────────────────────────────────────────────────┐
+│ GIAI ĐOẠN XÉT XỬ                                                 │
+│ Chuẩn bị xét xử (Điều 277): 30 ngày / 45 ngày / 02 th. / 03 th.  │
+│ Tòa án trả hồ sơ điều tra bổ sung (Điều 280): 01 THÁNG, 01 LẦN   │
+│ Mở phiên tòa: 15 NGÀY kể từ quyết định đưa vụ án ra xét xử       │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## SƠ ĐỒ 2. QUY TRÌNH GIỮ NGƯỜI TRONG TRƯỜNG HỢP KHẨN CẤP
+
+```
+ CĂN CỨ (chọn MỘT trong ba, Điều 110 khoản 1)
+ ┌────────────────────────────────────────────────────────────┐
+ │ a) Đang CHUẨN BỊ thực hiện tội phạm rất nghiêm trọng hoặc  │
+ │    đặc biệt nghiêm trọng                                   │
+ │ b) Người cùng thực hiện tội phạm / bị hại / người có mặt   │
+ │    tại nơi xảy ra tội phạm CHÍNH MẮT NHÌN THẤY và xác nhận │
+ │    + cần ngăn chặn ngay việc người đó trốn                 │
+ │ c) Có DẤU VẾT của tội phạm ở người / chỗ ở / nơi làm việc /│
+ │    phương tiện + cần ngăn chặn ngay việc trốn hoặc tiêu    │
+ │    hủy chứng cứ                                            │
+ └────────────────────────────┬───────────────────────────────┘
+                              ▼
+            LỆNH GIỮ NGƯỜI TRONG TRƯỜNG HỢP KHẨN CẤP
+            (Thủ trưởng, Phó Thủ trưởng CQĐT; ĐTV thuộc
+             trường hợp khoản 1a Điều 37; các chức danh khác
+             theo khoản 2 Điều 110)
+                              ▼
+            ┌──────────────────────────────────────┐
+            │ THI HÀNH: đọc lệnh, giải thích       │
+            │ quyền và nghĩa vụ, LẬP BIÊN BẢN,     │
+            │ giao lệnh                            │
+            │ GIỜ 0                                │
+            └──────────────┬───────────────────────┘
+                           ▼
+            ┌──────────────────────────────────────┐
+            │ THÔNG BÁO NGAY: gia đình, chính      │
+            │ quyền xã, phường, thị trấn nơi cư    │
+            │ trú hoặc cơ quan, tổ chức nơi làm    │
+            │ việc, học tập                        │
+            └──────────────┬───────────────────────┘
+                           ▼
+            ┌──────────────────────────────────────┐
+            │ TRONG 12 GIỜ:                        │
+            │ - LẤY LỜI KHAI NGAY                  │
+            │ - Ra MỘT trong ba quyết định          │
+            └────┬──────────────┬─────────────┬────┘
+                 ▼              ▼             ▼
+      ┌────────────────┐ ┌──────────────┐ ┌──────────────┐
+      │ QUYẾT ĐỊNH     │ │ LỆNH BẮT     │ │ TRẢ TỰ DO    │
+      │ TẠM GIỮ        │ │ người bị giữ │ │ NGAY         │
+      │                │ │              │ │              │
+      │ 03 ngày + 03   │ │ Gửi NGAY VKS │ │              │
+      │ + 03 = tối đa  │ │ để xét phê   │ │              │
+      │ 09 NGÀY        │ │ chuẩn        │ │              │
+      │                │ │              │ │              │
+      │ Mỗi lần gia    │ │ VKS quyết    │ │              │
+      │ hạn: VKS phê   │ │ định trong   │ │              │
+      │ chuẩn trong    │ │ 12 GIỜ       │ │              │
+      │ 12 GIỜ         │ │              │ │              │
+      └───────┬────────┘ └──────┬───────┘ └──────────────┘
+              │                 │
+              │         ┌───────┴────────┐
+              │         ▼                ▼
+              │  ┌─────────────┐  ┌──────────────┐
+              │  │ PHÊ CHUẨN   │  │ KHÔNG PHÊ    │
+              │  │             │  │ CHUẨN        │
+              │  │             │  │ → TRẢ TỰ DO  │
+              │  │             │  │   NGAY       │
+              │  └─────────────┘  └──────────────┘
+              ▼
+   ┌──────────────────────────────────────────────┐
+   │ TRONG THỜI HẠN TẠM GIỮ:                      │
+   │ - Đủ căn cứ → KHỞI TỐ BỊ CAN                 │
+   │ - KHÔNG đủ căn cứ → TRẢ TỰ DO NGAY           │
+   │                                              │
+   │ THỜI GIAN TẠM GIỮ ĐƯỢC TRỪ VÀO THỜI HẠN      │
+   │ TẠM GIAM (1 ngày tạm giữ = 1 ngày tạm giam)  │
+   └──────────────────────────────────────────────┘
+```
+
+---
+
+## SƠ ĐỒ 3. QUYẾT ĐỊNH LỰA CHỌN BIỆN PHÁP NGĂN CHẶN
+
+```
+                    BỊ CAN ĐÃ BỊ KHỞI TỐ
+                            │
+                            ▼
+        ┌───────────────────────────────────────────┐
+        │ Có thuộc trường hợp KHÔNG ĐƯỢC TẠM GIAM   │
+        │ tại khoản 4 Điều 119 không?               │
+        │ (phụ nữ có thai hoặc đang nuôi con dưới   │
+        │ 36 tháng; người già yếu; người bị bệnh    │
+        │ nặng — mà CÓ nơi cư trú và lý lịch rõ     │
+        │ ràng)                                     │
+        └──────────┬────────────────────┬───────────┘
+                CÓ │                    │ KHÔNG
+                   ▼                    ▼
+    ┌──────────────────────────┐  ┌─────────────────────────────┐
+    │ Kiểm tra 04 NGOẠI LỆ:    │  │ Xác định LOẠI TỘI PHẠM      │
+    │ - Bỏ trốn và bị bắt theo │  └──────────────┬──────────────┘
+    │   quyết định truy nã     │                 │
+    │ - Tiếp tục phạm tội      │     ┌───────────┼────────────┐
+    │ - Mua chuộc, cưỡng ép,   │     ▼           ▼            ▼
+    │   tiêu hủy chứng cứ, tẩu │ ┌────────┐ ┌─────────┐ ┌──────────┐
+    │   tán tài sản, đe dọa    │ │ ĐẶC    │ │ NGHIÊM  │ │ ÍT NGHIÊM│
+    │   người làm chứng        │ │ BIỆT   │ │ TRỌNG,  │ │ TRỌNG mà │
+    │ - Tội xâm phạm an ninh   │ │ NGHIÊM │ │ ÍT NGHIÊM│ │ hình phạt│
+    │   quốc gia và sẽ gây     │ │ TRỌNG, │ │ TRỌNG mà│ │ tù ĐẾN   │
+    │   nguy hại               │ │ RẤT    │ │ hình    │ │ 02 NĂM   │
+    │                          │ │ NGHIÊM │ │ phạt tù │ │          │
+    │ KHÔNG thuộc ngoại lệ →   │ │ TRỌNG  │ │ TRÊN    │ │ Chỉ tạm  │
+    │ KHÔNG TẠM GIAM, áp dụng  │ │        │ │ 02 NĂM  │ │ giam nếu │
+    │ biện pháp khác           │ │ Tạm    │ │         │ │ tiếp tục │
+    └──────────────────────────┘ │ giam   │ │ Cần MỘT │ │ phạm tội │
+                                 │ KHÔNG  │ │ trong 05│ │ hoặc bỏ  │
+                                 │ cần    │ │ trường  │ │ trốn và  │
+                                 │ điều   │ │ hợp     │ │ bị bắt   │
+                                 │ kiện   │ │ khoản 2 │ │ theo QĐ  │
+                                 │ bổ sung│ │ Điều 119│ │ truy nã  │
+                                 └────────┘ └─────────┘ └──────────┘
+
+    05 TRƯỜNG HỢP TẠI KHOẢN 2 ĐIỀU 119:
+    1. Đã bị áp dụng biện pháp ngăn chặn khác nhưng VI PHẠM
+    2. KHÔNG CÓ NƠI CƯ TRÚ RÕ RÀNG hoặc không xác định được lý lịch
+    3. BỎ TRỐN và bị bắt theo quyết định truy nã, hoặc CÓ DẤU HIỆU BỎ TRỐN
+    4. TIẾP TỤC PHẠM TỘI hoặc có dấu hiệu tiếp tục phạm tội
+    5. MUA CHUỘC, CƯỠNG ÉP, XÚI GIỤC khai báo gian dối; TIÊU HỦY, GIẢ MẠO
+       chứng cứ; TẨU TÁN TÀI SẢN; ĐE DỌA, KHỐNG CHẾ, BÁO THÙ người làm
+       chứng, bị hại, người tố giác và người thân thích của họ
+
+    BIỆN PHÁP THAY THẾ TẠM GIAM:
+    Bảo lĩnh (Điều 121) │ Đặt tiền để bảo đảm (Điều 122) │
+    Cấm đi khỏi nơi cư trú (Điều 123) │ Tạm hoãn xuất cảnh (Điều 124)
+```
+
+---
+
+## SƠ ĐỒ 4. QUY TRÌNH KHÁM XÉT
+
+```
+ CĂN CỨ (Điều 192): có căn cứ NHẬN ĐỊNH có công cụ, phương tiện
+ phạm tội; tài liệu, đồ vật, tài sản do phạm tội mà có; đồ vật,
+ dữ liệu điện tử, tài liệu khác liên quan đến vụ án
+ (hoặc để phát hiện người đang bị truy nã, truy tìm, giải cứu nạn nhân)
+                              │
+          ┌───────────────────┴──────────────────┐
+          ▼                                      ▼
+┌──────────────────────┐              ┌──────────────────────┐
+│ TRƯỜNG HỢP THÔNG     │              │ TRƯỜNG HỢP KHẨN CẤP  │
+│ THƯỜNG               │              │ (Điều 193 khoản 2)   │
+│                      │              │                      │
+│ Lệnh khám xét của    │              │ Lệnh của người có    │
+│ người có thẩm quyền  │              │ thẩm quyền tại khoản │
+│ (khoản 1 Điều 113)   │              │ 2 Điều 110           │
+│         │            │              │         │            │
+│         ▼            │              │         ▼            │
+│ PHÊ CHUẨN CỦA VKS    │              │ THI HÀNH NGAY        │
+│ TRƯỚC KHI THI HÀNH   │              │         │            │
+│         │            │              │         ▼            │
+│         ▼            │              │ THÔNG BÁO VĂN BẢN    │
+│ THÔNG BÁO VKS ĐỂ CỬ  │              │ CHO VKS TRONG 24 GIỜ │
+│ KIỂM SÁT VIÊN        │              │ KỂ TỪ KHI KHÁM XONG  │
+└──────────┬───────────┘              └──────────┬───────────┘
+           └──────────────┬──────────────────────┘
+                          ▼
+     ┌──────────────────────────────────────────────────┐
+     │ THÀNH PHẦN BẮT BUỘC THEO ĐỐI TƯỢNG KHÁM XÉT      │
+     ├──────────────────────────────────────────────────┤
+     │ CHỖ Ở:                                           │
+     │  Bình thường: người có chỗ ở (hoặc người từ đủ   │
+     │  18 tuổi cùng chỗ ở) + ĐẠI DIỆN CHÍNH QUYỀN XÃ,  │
+     │  PHƯỜNG, THỊ TRẤN + NGƯỜI CHỨNG KIẾN             │
+     │  Vắng mặt, không thể trì hoãn: đại diện chính    │
+     │  quyền + HAI NGƯỜI CHỨNG KIẾN                    │
+     │  ► KHÔNG BẮT ĐẦU VÀO BAN ĐÊM (22h–06h), trừ      │
+     │    khẩn cấp và phải ghi rõ lý do                 │
+     ├──────────────────────────────────────────────────┤
+     │ NƠI LÀM VIỆC:                                    │
+     │  Người đó + ĐẠI DIỆN CƠ QUAN, TỔ CHỨC            │
+     │  Không có đại diện cơ quan: đại diện chính quyền │
+     │  + HAI NGƯỜI CHỨNG KIẾN                          │
+     ├──────────────────────────────────────────────────┤
+     │ ĐỊA ĐIỂM: đại diện chính quyền + người chứng kiến│
+     ├──────────────────────────────────────────────────┤
+     │ PHƯƠNG TIỆN: chủ sở hữu hoặc người quản lý +     │
+     │  người chứng kiến; vắng mặt: HAI NGƯỜI CHỨNG KIẾN│
+     ├──────────────────────────────────────────────────┤
+     │ NGƯỜI: NGƯỜI CÙNG GIỚI thực hiện + NGƯỜI CÙNG    │
+     │  GIỚI chứng kiến                                 │
+     │  Không cần lệnh khi: bắt người; có căn cứ khẳng  │
+     │  định người có mặt giấu trong người vũ khí, hung │
+     │  khí, chứng cứ, tài liệu, đồ vật liên quan       │
+     └────────────────────────┬─────────────────────────┘
+                              ▼
+     ┌──────────────────────────────────────────────────┐
+     │ TIẾN HÀNH                                        │
+     │ 1. Đọc lệnh, đưa người bị khám xét đọc           │
+     │ 2. Giải thích quyền, nghĩa vụ                    │
+     │ 3. Yêu cầu TỰ ĐƯA RA tài liệu, đồ vật liên quan  │
+     │ 4. Nếu từ chối hoặc đưa không đủ → khám xét      │
+     │ 5. KIỂM SOÁT: không ai rời khỏi nơi khám, không  │
+     │    liên hệ, trao đổi với nhau hoặc người khác    │
+     │ 6. Chụp ảnh trước khi di chuyển đồ vật           │
+     │ 7. Lập BẢNG KÊ CHI TIẾT ngay tại nơi thu giữ     │
+     │ 8. Niêm phong trước mặt chủ sở hữu, người quản   │
+     │    lý, người chứng kiến                          │
+     └────────────────────────┬─────────────────────────┘
+                              ▼
+     ┌──────────────────────────────────────────────────┐
+     │ HOÀN TẤT                                         │
+     │ - Biên bản khám xét, đủ chữ ký TỪNG TRANG        │
+     │ - Biên bản thu giữ, tạm giữ lập BỐN BẢN:         │
+     │   chủ tài liệu, đồ vật │ hồ sơ vụ án │ VKS │     │
+     │   cơ quan quản lý tài liệu, đồ vật bị tạm giữ    │
+     │ - Nếu Kiểm sát viên vắng mặt: ghi rõ vào biên bản│
+     │ - Vào sổ theo dõi vật chứng, đánh bút lục        │
+     └──────────────────────────────────────────────────┘
+```
+
+---
+
+## SƠ ĐỒ 5. QUY TRÌNH BẢO ĐẢM THU HỒI TÀI SẢN
+
+```
+GIAI ĐOẠN GIẢI QUYẾT NGUỒN TIN
+┌──────────────────────────────────────────────────────────┐
+│ ĐƯỢC LÀM:                                                │
+│ ├── Yêu cầu cung cấp thông tin về tài sản, tài khoản     │
+│ ├── TẠM HOÃN XUẤT CẢNH (người bị tố giác, người bị       │
+│ │   kiến nghị khởi tố)                                   │
+│ ├── Yêu cầu thông tin giao dịch đáng ngờ từ cơ quan      │
+│ │   phòng, chống rửa tiền                                │
+│ └── Đề nghị tổ chức tài chính TRÌ HOÃN GIAO DỊCH         │
+│                                                           │
+│ KHÔNG ĐƯỢC LÀM:                                          │
+│ └── Kê biên tài sản (chỉ áp dụng với bị can, bị cáo)     │
+└──────────────────────────┬───────────────────────────────┘
+                           ▼
+              ╔════════════════════════════╗
+              ║   KHỞI TỐ BỊ CAN           ║
+              ║   (mở khóa thẩm quyền)     ║
+              ╚════════════┬═══════════════╝
+                           ▼
+┌──────────────────────────────────────────────────────────┐
+│ THỰC HIỆN ĐỒNG THỜI TRONG CÙNG MỘT NGÀY                  │
+│                                                           │
+│ ├── LỆNH PHONG TỎA TÀI KHOẢN (Điều 129)                  │
+│ │   ├── Tài khoản của NGƯỜI BỊ BUỘC TỘI                  │
+│ │   └── Tài khoản của NGƯỜI KHÁC nếu có căn cứ tiền      │
+│ │       liên quan đến hành vi phạm tội                   │
+│ │   ► Ghi rõ SỐ TIỀN phong tỏa                           │
+│ │   ► Giao cho: người bị buộc tội, người liên quan,      │
+│ │     tổ chức tín dụng / Kho bạc Nhà nước                │
+│ │   ► Thông báo VKS TRƯỚC KHI THI HÀNH                   │
+│ │                                                         │
+│ ├── LỆNH KÊ BIÊN TÀI SẢN (Điều 128)                      │
+│ │   ► Chỉ tài sản CỦA BỊ CAN, BỊ CÁO                     │
+│ │   ► Chỉ PHẦN TƯƠNG ỨNG mức cần bảo đảm                 │
+│ │   ► Thành phần: bị can hoặc người từ đủ 18 tuổi trong  │
+│ │     gia đình hoặc người đại diện + ĐẠI DIỆN CHÍNH      │
+│ │     QUYỀN + NGƯỜI CHỨNG KIẾN                           │
+│ │   ► Biên bản BỐN BẢN                                    │
+│ │   ► Thông báo VKS TRƯỚC KHI THI HÀNH                   │
+│ │                                                         │
+│ ├── KHÁM XÉT đồng thời tại tất cả địa điểm               │
+│ ├── TẠM HOÃN XUẤT CẢNH với người liên quan                │
+│ └── VĂN BẢN NGĂN CHẶN GIAO DỊCH gửi:                     │
+│     cơ quan đăng ký đất đai │ cơ quan đăng ký xe │        │
+│     cơ quan đăng ký kinh doanh │ Trung tâm Lưu ký         │
+│     Chứng khoán │ công ty chứng khoán │ văn phòng         │
+│     công chứng │ tổ chức cung cấp dịch vụ tài sản mã hóa  │
+└──────────────────────────┬───────────────────────────────┘
+                           ▼
+┌──────────────────────────────────────────────────────────┐
+│ TÀI SẢN ĐÃ CHUYỂN SANG NGƯỜI THỨ BA?                     │
+│                                                           │
+│ Chứng minh theo 06 hướng:                                │
+│ 1. Dòng tiền mua tài sản xuất phát từ bị can             │
+│ 2. Thu nhập người đứng tên không tương xứng               │
+│ 3. Bị can thực tế sử dụng, quản lý, thu lợi               │
+│ 4. Thời điểm chuyển dịch sát thời điểm bị điều tra        │
+│ 5. Giá giao dịch thấp bất thường, không có chứng từ       │
+│ 6. Quan hệ thân thích hoặc phụ thuộc giữa các bên         │
+│                           │                               │
+│         ┌─────────────────┼──────────────────┐            │
+│         ▼                 ▼                  ▼            │
+│ ┌───────────────┐ ┌───────────────┐ ┌──────────────────┐ │
+│ │ Giao dịch GIẢ │ │ Là VẬT, TIỀN  │ │ Người nhận BIẾT  │ │
+│ │ TẠO → tài sản │ │ liên quan đến │ │ RÕ nguồn gốc →   │ │
+│ │ vẫn của bị can│ │ tội phạm →    │ │ khởi tố TỘI RỬA  │ │
+│ │ → KÊ BIÊN     │ │ TỊCH THU theo │ │ TIỀN (Điều 324)  │ │
+│ │ (Điều 128)    │ │ Điều 47 BLHS  │ │ → kê biên tài    │ │
+│ │               │ │               │ │ sản của người đó │ │
+│ └───────────────┘ └───────────────┘ └──────────────────┘ │
+└──────────────────────────┬───────────────────────────────┘
+                           ▼
+┌──────────────────────────────────────────────────────────┐
+│ TÀI SẢN Ở NƯỚC NGOÀI                                     │
+│ → Yêu cầu TƯƠNG TRỢ TƯ PHÁP VỀ HÌNH SỰ                   │
+│   (Luật số 103/2025/QH15, hiệu lực 01/7/2026)            │
+│ → Gửi qua cơ quan trung ương, KHÔNG gửi trực tiếp        │
+│ → Thời gian rất dài: gửi NGAY khi xác định nhu cầu       │
+│ → Bản án có hiệu lực thường là điều kiện bắt buộc        │
+│   (xem xét chế định XÉT XỬ VẮNG MẶT)                     │
+└──────────────────────────┬───────────────────────────────┘
+                           ▼
+┌──────────────────────────────────────────────────────────┐
+│ KHUYẾN KHÍCH TỰ NGUYỆN NỘP LẠI                           │
+│ Giải thích ĐÚNG QUY ĐỊNH (không hứa hẹn ngoài thẩm quyền)│
+│ ├── Tình tiết giảm nhẹ (Điều 51 khoản 1 điểm b, t BLHS)  │
+│ ├── Cơ chế xét giảm án khi nộp lại ít nhất 3/4 tài sản   │
+│ │   tham ô, nhận hối lộ (Luật số 86/2025/QH15)           │
+│ └── Lập BIÊN BẢN tự nguyện nộp, chuyển Kho bạc Nhà nước  │
+└──────────────────────────┬───────────────────────────────┘
+                           ▼
+┌──────────────────────────────────────────────────────────┐
+│ BẢNG THEO DÕI THU HỒI TÀI SẢN                            │
+│ Cập nhật tại từng mốc: khởi tố bị can │ mỗi lần gia hạn  │
+│ điều tra │ kết thúc điều tra                             │
+│ Nêu trong BẢN KẾT LUẬN ĐIỀU TRA                          │
+└──────────────────────────────────────────────────────────┘
+```
+
+---
+
+## SƠ ĐỒ 6. QUY TRÌNH ĐỐI VỚI NGƯỜI CHƯA THÀNH NIÊN
+
+```
+      PHÁT HIỆN NGƯỜI THỰC HIỆN HÀNH VI CÓ THỂ LÀ NGƯỜI CHƯA THÀNH NIÊN
+                                    │
+                                    ▼
+          ┌──────────────────────────────────────────────┐
+          │ XÁC ĐỊNH TUỔI (việc ĐẦU TIÊN và BẮT BUỘC)    │
+          │ Thứ tự nguồn:                                │
+          │ 1. Giấy khai sinh                            │
+          │ 2. Sổ đăng ký khai sinh                      │
+          │ 3. Cơ sở dữ liệu quốc gia về dân cư, căn cước│
+          │ 4. Giấy tờ hộ tịch khác, hồ sơ học sinh      │
+          │ 5. Lời khai cha, mẹ, người thân thích        │
+          │ 6. TRƯNG CẦU GIÁM ĐỊNH (bắt buộc theo Điều   │
+          │    206 khoản 2 khi không xác định được)      │
+          │ ► Không xác định được chính xác → áp dụng    │
+          │   theo hướng CÓ LỢI cho người bị buộc tội    │
+          └──────────────────┬───────────────────────────┘
+                             ▼
+              ┌──────────────┼───────────────┐
+              ▼              ▼               ▼
+      ┌──────────────┐ ┌───────────┐ ┌──────────────────┐
+      │ DƯỚI 14 TUỔI │ │ TỪ ĐỦ 14  │ │ TỪ ĐỦ 16 ĐẾN     │
+      │              │ │ ĐẾN DƯỚI  │ │ DƯỚI 18 TUỔI     │
+      │ KHÔNG chịu   │ │ 16 TUỔI   │ │                  │
+      │ trách nhiệm  │ │           │ │ Chịu trách nhiệm │
+      │ hình sự      │ │ Chỉ chịu  │ │ hình sự về MỌI   │
+      │              │ │ TNHS về   │ │ tội phạm, trừ    │
+      │ → Không khởi │ │ tội RẤT   │ │ trường hợp BLHS  │
+      │   tố         │ │ NGHIÊM    │ │ quy định khác    │
+      │              │ │ TRỌNG,    │ │                  │
+      │              │ │ ĐẶC BIỆT  │ │                  │
+      │              │ │ NGHIÊM    │ │                  │
+      │              │ │ TRỌNG     │ │                  │
+      │              │ │ thuộc 28  │ │                  │
+      │              │ │ điều luật │ │                  │
+      │              │ │ tại khoản │ │                  │
+      │              │ │ 2 Điều 12 │ │                  │
+      │              │ │ BLHS      │ │                  │
+      └──────────────┘ └─────┬─────┘ └────────┬─────────┘
+                             └───────┬────────┘
+                                     ▼
+          ┌──────────────────────────────────────────────┐
+          │ VỤ ÁN CÓ CẢ BỊ CAN ĐÃ THÀNH NIÊN?            │
+          │ CÓ → BẮT BUỘC TÁCH VỤ ÁN                     │
+          │ (tài liệu, chứng cứ vẫn dùng chung)          │
+          └──────────────────┬───────────────────────────┘
+                             ▼
+          ┌──────────────────────────────────────────────┐
+          │ XEM XÉT BIỆN PHÁP XỬ LÝ CHUYỂN HƯỚNG         │
+          │ (Điều 36 Luật số 59/2024/QH15 — 12 biện pháp)│
+          │                                               │
+          │ NHÓM NỀN (khoản 1–5):                        │
+          │  1. Khiển trách                              │
+          │  2. Xin lỗi bị hại                           │
+          │  3. Bồi thường thiệt hại                     │
+          │  4. Giáo dục tại xã, phường, đặc khu         │
+          │  5. Quản thúc tại gia đình                   │
+          │                                               │
+          │ NHÓM BỔ TRỢ (khoản 6–11) — PHẢI áp dụng ĐỒNG │
+          │ THỜI với một hoặc nhiều biện pháp nhóm nền:  │
+          │  6. Hạn chế khung giờ đi lại                 │
+          │  7. Cấm tiếp xúc với người có nguy cơ        │
+          │  8. Cấm đến địa điểm có nguy cơ              │
+          │  9. Tham gia chương trình học tập, dạy nghề  │
+          │ 10. Tham gia điều trị hoặc tư vấn tâm lý     │
+          │ 11. Thực hiện công việc phục vụ cộng đồng    │
+          │                                               │
+          │ NHÓM RIÊNG:                                  │
+          │ 12. Giáo dục tại trường giáo dưỡng           │
+          │     ► KHÔNG áp dụng đồng thời với các biện   │
+          │       pháp tại cộng đồng                     │
+          │                                               │
+          │ ► KHÔNG áp dụng xử lý chuyển hướng nếu tại   │
+          │   thời điểm xem xét người đó ĐÃ ĐỦ 18 TUỔI   │
+          └──────────────────┬───────────────────────────┘
+                             ▼
+          ┌──────────────────────────────────────────────┐
+          │ THỦ TỤC TỐ TỤNG ĐẶC THÙ                      │
+          │ ├── ĐTV phải được đào tạo hoặc có kinh nghiệm│
+          │ │   về vụ án liên quan đến người chưa thành  │
+          │ │   niên, có hiểu biết về tâm lý học, khoa   │
+          │ │   học giáo dục                             │
+          │ ├── BẮT BUỘC có NGƯỜI ĐẠI DIỆN               │
+          │ ├── BẮT BUỘC chỉ định NGƯỜI BÀO CHỮA         │
+          │ ├── KHÔNG hỏi cung, lấy lời khai BAN ĐÊM     │
+          │ ├── Phòng thân thiện; ngôn ngữ phù hợp       │
+          │ ├── Tước tự do là BIỆN PHÁP CUỐI CÙNG        │
+          │ ├── Giam giữ RIÊNG, không cùng người đã      │
+          │ │   thành niên                               │
+          │ ├── Thời hạn tạm giữ, tạm giam NGẮN HƠN      │
+          │ │   (tra Luật số 59/2024/QH15)               │
+          │ └── BẢO MẬT TUYỆT ĐỐI thông tin              │
+          └──────────────────────────────────────────────┘
+```
+
+---
+
+## SƠ ĐỒ 7. BẢN ĐỒ QUYẾT ĐỊNH NHANH THEO TÌNH HUỐNG
+
+```
+TÔI ĐANG Ở ĐÂU VÀ CẦN LÀM GÌ?
+
+├── Vừa nhận tin báo, chưa biết có tội phạm hay không
+│   → Phần 05 (tiếp nhận, phân loại) + Checklist 01
+│
+├── Hết 20 ngày xác minh mà chưa đủ căn cứ
+│   → Phần 05 mục VI (gia hạn) hoặc mục VII (tạm đình chỉ)
+│   → Nhớ mốc 05 NGÀY trước khi hết hạn để đề nghị gia hạn
+│
+├── Cần giữ người ngay
+│   → Phần 07 mục III + Sơ đồ 2
+│   → Kiểm tra có thuộc 03 căn cứ Điều 110 khoản 1 không
+│
+├── Chuẩn bị khởi tố bị can
+│   → Phần 06 mục V + Checklist 03
+│   → Kiểm tra tuổi, thời hiệu, khung hình phạt, người bào chữa
+│
+├── Cần tạm giam
+│   → Phần 07 mục VIII + Sơ đồ 3 + Checklist 06
+│
+├── Cần khám xét
+│   → Phần 09 mục VIII + Sơ đồ 4 + Checklist 04
+│
+├── Cần thu giữ điện thoại, máy tính, dữ liệu
+│   → Phần 15 mục III
+│
+├── Phát hiện ví tài sản mã hóa
+│   → Phần 15 mục VI
+│
+├── Cần phong tỏa tài khoản, kê biên tài sản
+│   → Phần 08 + Sơ đồ 5 + Checklist 09
+│
+├── Cần xác định thiệt hại
+│   → Phần 11 (giám định, định giá) + Checklist 08
+│   → Phân biệt: định giá tài sản hay giám định tài chính, kế toán
+│
+├── Sắp hết thời hạn điều tra
+│   → Phần 13 + Phụ lục A + Checklist 07
+│   → Nhớ mốc 10 NGÀY trước khi hết hạn
+│
+├── Chưa bắt được bị can, hết thời hạn điều tra
+│   → Phần 12 mục VI (tạm đình chỉ) + Checklist 11
+│   → Phải ra QUYẾT ĐỊNH TRUY NÃ TRƯỚC khi tạm đình chỉ
+│   → Xem xét chế định XÉT XỬ VẮNG MẶT (Phần 12 mục VIII)
+│
+├── Bị can là người dưới 18 tuổi
+│   → Phần 17 + Sơ đồ 6
+│   → BẮT BUỘC TÁCH VỤ ÁN nếu còn bị can đã thành niên
+│
+├── Doanh nghiệp có dấu hiệu phạm tội
+│   → Phần 16
+│   → Kiểm tra tội danh có thuộc Điều 76 BLHS không
+│
+├── Có tài sản, đối tượng ở nước ngoài
+│   → Phần 18 mục VI
+│   → Viện dẫn ba luật mới số 100, 101, 103/2025/QH15
+│
+├── Chuẩn bị kết thúc điều tra
+│   → Phần 12 mục III, mục IV + Checklist 10
+│   → Bài tập tự phản biện: 05 luận điểm của người bào chữa
+│
+├── Viện kiểm sát trả hồ sơ điều tra bổ sung
+│   → Phần 12 mục X + Phần 21 mục IV
+│   → Lập kế hoạch ngay, thời hạn chỉ 01 hoặc 02 tháng
+│
+├── Bị can kêu oan, tố cáo bức cung
+│   → Phần 19 mục IV.4 + Phần 22 mục VII
+│   → GHI NHẬN ĐẦY ĐỦ, BÁO CÁO NGAY, KHÔNG TỰ XỬ LÝ
+│
+└── Có người đến nhà, đề nghị lợi ích, gợi ý hướng xử lý
+    → Phần 22 mục IV
+    → TỪ CHỐI, BÁO CÁO BẰNG VĂN BẢN NGAY TRONG NGÀY
+```
+
+---
+
+[Phụ lục trước: Thuật ngữ nghiệp vụ](PL-E-thuat-ngu-nghiep-vu.md) | [Về mục lục](../README.md)

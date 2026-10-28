@@ -6,7 +6,7 @@
 
 ## I. CĂN CỨ PHÁP LÝ
 
-- Bộ luật Tố tụng hình sự năm 2015: Điều 4 khoản 1 điểm d, Điều 143, Điều 144 đến Điều 150, Điều 159 đến Điều 162.
+- Bộ luật Tố tụng hình sự năm 2015: Điều 4 khoản 1, Điều 143, Điều 144 đến Điều 150, Điều 159 đến Điều 162.
 - Luật số 99/2025/QH15 sửa đổi, bổ sung một số điều của Bộ luật Tố tụng hình sự.
 - Thông tư liên tịch số 01/2017/TTLT-BCA-BQP-BTC-BNN&PTNT-VKSNDTC ngày 29/12/2017, được sửa đổi, bổ sung bởi Thông tư liên tịch số 01/2021/TTLT-BCA-BQP-BTC-BNNPTNT-VKSNDTC ngày 29/11/2021; tham khảo Văn bản hợp nhất số 20/VBHN-BCA.
 - Thông tư liên tịch số 02/2025/TTLT-BCA-VKSNDTC-TANDTC ngày 27/02/2025.
@@ -19,7 +19,7 @@
 
 ### 1. Nguồn tin về tội phạm là gì
 
-Theo Điều 4 khoản 1 điểm d BLTTHS, nguồn tin về tội phạm gồm:
+Theo Điều 4 khoản 1 BLTTHS, nguồn tin về tội phạm gồm:
 
 - Tố giác về tội phạm.
 - Tin báo về tội phạm.

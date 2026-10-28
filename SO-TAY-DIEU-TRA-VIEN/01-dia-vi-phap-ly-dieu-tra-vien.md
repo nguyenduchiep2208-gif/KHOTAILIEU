@@ -152,7 +152,7 @@ Theo Điều 54 Luật Tổ chức cơ quan điều tra hình sự năm 2015, Đ
 
 ### 2. Khái niệm người thân thích
 
-Theo Điều 4 khoản 1 điểm e BLTTHS, người thân thích của người tham gia tố tụng, người có thẩm quyền tiến hành tố tụng là người có quan hệ với người đó gồm:
+Theo Điều 4 khoản 1 BLTTHS, người thân thích của người tham gia tố tụng, người có thẩm quyền tiến hành tố tụng là người có quan hệ với người đó gồm:
 
 - Vợ, chồng, bố đẻ, mẹ đẻ, bố chồng, mẹ chồng, bố vợ, mẹ vợ, bố nuôi, mẹ nuôi, con đẻ, con nuôi.
 - Ông nội, bà nội, ông ngoại, bà ngoại, anh ruột, chị ruột, em ruột.
@@ -171,7 +171,7 @@ Theo Điều 4 khoản 1 điểm e BLTTHS, người thân thích của người 
 4. Thông báo bằng văn bản cho người yêu cầu và Viện kiểm sát cùng cấp.
 5. Nếu chấp nhận: ra quyết định phân công Điều tra viên khác, bàn giao hồ sơ có biên bản.
 
-> **[CẢNH BÁO]** Điều tra viên tiếp tục tiến hành tố tụng khi đã có căn cứ phải từ chối là vi phạm nghiêm trọng thủ tục tố tụng theo Điều 4 khoản 1 điểm o BLTTHS, là căn cứ để Viện kiểm sát trả hồ sơ điều tra bổ sung hoặc Tòa án hủy bản án.
+> **[CẢNH BÁO]** Điều tra viên tiếp tục tiến hành tố tụng khi đã có căn cứ phải từ chối là vi phạm nghiêm trọng thủ tục tố tụng theo Điều 4 khoản 1 BLTTHS, là căn cứ để Viện kiểm sát trả hồ sơ điều tra bổ sung hoặc Tòa án hủy bản án.
 
 ---
 
