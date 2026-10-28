@@ -10,8 +10,9 @@
 | Mốc cập nhật pháp luật | Đến hết ngày 28/10/2026 |
 | Đối tượng sử dụng | Điều tra viên, Cán bộ điều tra, Trợ lý điều tra; cán bộ làm công tác tiếp nhận, giải quyết nguồn tin về tội phạm |
 | Phạm vi | Giai đoạn tiếp nhận, giải quyết nguồn tin về tội phạm; khởi tố; điều tra; kết thúc điều tra |
-| Số phần chính | 20 phần |
+| Số phần chính | 23 phần |
 | Số phụ lục | 06 phụ lục |
+| Bản in | [Word](ban-in/SO%20TAY%20DIEU%20TRA%20VIEN.docx) và [PDF](ban-in/SO%20TAY%20DIEU%20TRA%20VIEN.pdf) 383 trang A4, thể thức Nghị định 30/2020/NĐ-CP |
 
 ---
 
