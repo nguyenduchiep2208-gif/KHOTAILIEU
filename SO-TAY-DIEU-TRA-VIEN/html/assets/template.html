@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title$</title>
+<meta name="description" content="Sổ tay Điều tra viên - tài liệu nghiệp vụ tra cứu, cập nhật pháp luật tố tụng hình sự đến ngày 28/10/2026.">
+<link rel="stylesheet" href="$cssprefix$assets/style.css">
+</head>
+<body>
+<div class="wrap">
+$if(toc)$
+<nav id="TOC" role="doc-toc">
+$toc$
+</nav>
+$endif$
+<main>
+<div class="topbar">
+  <div><a href="$cssprefix$index.html">Mục lục Sổ tay</a></div>
+  <div class="tb-right">
+$if(prevlink)$    <a href="$prevlink$">&#8592; $prevtitle$</a>
+$endif$$if(nextlink)$    <a href="$nextlink$">$nexttitle$ &#8594;</a>
+$endif$    <button class="theme" id="themeBtn" type="button">Sáng / tối</button>
+  </div>
+</div>
+$body$
+</main>
+</div>
+<script src="$cssprefix$assets/app.js"></script>
+</body>
+</html>
