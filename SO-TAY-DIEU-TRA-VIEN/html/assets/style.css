@@ -17,6 +17,7 @@
     --must-bg:#2d1a1a; --must-line:#c96a6a;
     --check-bg:#16222e; --check-line:#4f93c8;
     --new-bg:#17251c; --new-line:#55a173;
+    color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
@@ -27,6 +28,7 @@
   --must-bg:#2d1a1a; --must-line:#c96a6a;
   --check-bg:#16222e; --check-line:#4f93c8;
   --new-bg:#17251c; --new-line:#55a173;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -39,7 +41,7 @@ body{
 #TOC{
   position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto;
   background:var(--panel); border-right:1px solid var(--line);
-  padding:20px 16px 48px; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; font-size:13.5px;
+  padding-block:20px 48px; padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:16px; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; font-size:13.5px;
 }
 #TOC::before{
   content:"Mục lục phần này"; display:block; font-weight:700; font-size:11px;
@@ -51,7 +53,7 @@ body{
 #TOC li{margin:3px 0}
 #TOC a{color:var(--ink-soft); text-decoration:none; display:block; padding:3px 6px; border-radius:5px; line-height:1.4}
 #TOC a:hover{color:var(--accent); background:var(--accent-soft)}
-main{padding:28px 40px 100px; max-width:1020px; min-width:0}
+main{padding-block:28px 100px; padding-left:max(40px,env(safe-area-inset-left,0px)); padding-right:max(40px,env(safe-area-inset-right,0px)); max-width:1020px; min-width:0}
 .topbar{
   display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
   font-family:system-ui,-apple-system,"Segoe UI",sans-serif; font-size:13px;
@@ -107,7 +109,7 @@ td:empty::after{content:"☐"; color:var(--ink-soft); opacity:.55}
 @media (max-width:900px){
   .wrap{grid-template-columns:minmax(0,1fr)}
   #TOC{position:static; height:auto; max-height:320px; border-right:0; border-bottom:1px solid var(--line)}
-  main{padding:20px 16px 80px}
+  main{padding-block:20px 80px; padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px))}
   body{font-size:16.5px}
 }
 @media print{
