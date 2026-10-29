@@ -21,10 +21,10 @@ Tài liệu nghiệp vụ tra cứu, áp dụng pháp luật tố tụng hình s
 |---|---|
 | **Bản HTML có tìm kiếm** (khuyến nghị, dùng được ngoại tuyến) | [`SO-TAY-DIEU-TRA-VIEN/html/index.html`](SO-TAY-DIEU-TRA-VIEN/html/index.html) |
 | **Bản Word để in** (thể thức Nghị định 30/2020/NĐ-CP) | [`SO TAY DIEU TRA VIEN.docx`](SO-TAY-DIEU-TRA-VIEN/ban-in/SO%20TAY%20DIEU%20TRA%20VIEN.docx) |
-| **Bản PDF để in** (383 trang A4, in được ngay) | [`SO TAY DIEU TRA VIEN.pdf`](SO-TAY-DIEU-TRA-VIEN/ban-in/SO%20TAY%20DIEU%20TRA%20VIEN.pdf) |
+| **Bản PDF để in** (384 trang A4, in được ngay) | [`SO TAY DIEU TRA VIEN.pdf`](SO-TAY-DIEU-TRA-VIEN/ban-in/SO%20TAY%20DIEU%20TRA%20VIEN.pdf) |
 | **Bản Markdown** (đọc trực tiếp trên GitHub) | [`SO-TAY-DIEU-TRA-VIEN/README.md`](SO-TAY-DIEU-TRA-VIEN/README.md) |
 
-Bản in được trình bày theo thể thức văn bản hành chính tại Nghị định số 30/2020/NĐ-CP: khổ A4, lề trái 3 cm, lề phải 2 cm, lề trên 2 cm, lề dưới 2 cm, phông Times New Roman cỡ 14, giãn dòng 1,15, lùi đầu dòng 1 cm, số trang đặt giữa lề trên và không hiển thị ở trang đầu. Mục lục 325 dòng có số trang thật, mỗi phần bắt đầu ở một trang mới. Xem thêm [`SO-TAY-DIEU-TRA-VIEN/ban-in/README.md`](SO-TAY-DIEU-TRA-VIEN/ban-in/README.md).
+Bản in được trình bày theo thể thức văn bản hành chính tại Nghị định số 30/2020/NĐ-CP: khổ A4, lề trái 3 cm, lề phải 2 cm, lề trên 2 cm, lề dưới 2 cm, phông Times New Roman cỡ 14, giãn dòng 1,15, lùi đầu dòng 1 cm, số trang đặt giữa lề trên và không hiển thị ở trang đầu. Mục lục 328 dòng có số trang thật, mỗi phần bắt đầu ở một trang mới. Xem thêm [`SO-TAY-DIEU-TRA-VIEN/ban-in/README.md`](SO-TAY-DIEU-TRA-VIEN/ban-in/README.md).
 
 ### Nội dung
 

@@ -37,17 +37,24 @@ def load(p: Path) -> str:
     return flatten_links(strip_nav(p.read_text(encoding="utf-8")))
 
 
-# ---- Loi noi dau tu README cua So tay ----
+# ---- Phan mo dau lay tu README cua So tay ----
+# Muc "III. MUC LUC" cua README bi bo vi ban in da co muc luc rieng co so trang;
+# cac muc con lai duoc danh so lai lien tuc.
 readme = (SRC / "README.md").read_text(encoding="utf-8")
+WANT = (("## I. LỜI NÓI ĐẦU", "I. LỜI NÓI ĐẦU"),
+        ("## II. CẢNH BÁO SỬ DỤNG", "II. CẢNH BÁO SỬ DỤNG"),
+        ("## V. QUY ƯỚC TRÌNH BÀY", "III. QUY ƯỚC TRÌNH BÀY VÀ TỪ VIẾT TẮT"),
+        ("## IV. TRA CỨU NHANH THEO TÌNH HUỐNG", "IV. TRA CỨU NHANH THEO TÌNH HUỐNG"),
+        ("## VI. CẤU TRÚC ĐỌC KHUYẾN NGHỊ", "V. CẤU TRÚC ĐỌC KHUYẾN NGHỊ"))
 intro_parts = []
-for head in ("## I. LỜI NÓI ĐẦU", "## II. CẢNH BÁO SỬ DỤNG"):
+for head, title in WANT:
     i = readme.index(head)
-    j = readme.index("\n## ", i + 5)
-    intro_parts.append(readme[i:j].strip())
-intro = "# LỜI NÓI ĐẦU VÀ CẢNH BÁO SỬ DỤNG\n\n" + "\n\n".join(intro_parts)
+    j = readme.find("\n## ", i + 5)
+    chunk = readme[i:j if j != -1 else len(readme)].strip()
+    chunk = chunk.split("\n---\n")[0].rstrip()   # bo duong ke cuoi muc
+    intro_parts.append("## " + title + chunk[len(head):])
+intro = "# LỜI NÓI ĐẦU, QUY ƯỚC VÀ TRA CỨU NHANH\n\n" + "\n\n".join(intro_parts)
 intro = flatten_links(strip_nav(intro))
-intro = intro.replace("## I. LỜI NÓI ĐẦU", "## I. LỜI NÓI ĐẦU").replace(
-    "## II. CẢNH BÁO SỬ DỤNG", "## II. CẢNH BÁO SỬ DỤNG")
 
 files = sorted(SRC.glob("[0-9][0-9]-*.md")) + sorted((SRC / "phu-luc").glob("PL-*.md"))
 

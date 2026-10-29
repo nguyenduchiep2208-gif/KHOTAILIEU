@@ -21,8 +21,8 @@ Thư mục này chứa bản dùng để in của Sổ tay Điều tra viên, tr
 | Tiêu đề phần | In đậm, màu đen, mỗi phần bắt đầu ở một trang mới |
 | Bảng biểu | Có đường kẻ đầy đủ, chữ cỡ 11, dòng tiêu đề in đậm và lặp lại khi bảng sang trang |
 | Sơ đồ | Phông Courier New cỡ 9 để giữ đúng khung và đường nối |
-| Tổng số trang | 383 trang |
-| Mục lục | 325 dòng, có số trang thật |
+| Tổng số trang | 384 trang |
+| Mục lục | 328 dòng, có số trang thật |
 
 ## Lưu ý khi in
 
@@ -33,12 +33,12 @@ Thư mục này chứa bản dùng để in của Sổ tay Điều tra viên, tr
 
 ## Dựng lại bản in
 
-Nguồn của bản in là 29 tệp Markdown trong thư mục `SO-TAY-DIEU-TRA-VIEN`. Sau khi sửa nội dung, chạy:
+Nguồn của bản in là 29 tệp Markdown trong thư mục `SO-TAY-DIEU-TRA-VIEN`, cộng phần mở đầu lấy từ `README.md` của sổ tay. Sau khi sửa nội dung, chạy:
 
 ```bash
 scripts/word/build.sh
 ```
 
-Day chuyền gồm sáu bước: tạo tệp mẫu định dạng, ghép bản thảo, chuyển sang Word, dựng mục lục lượt một, dò số trang thật từ bản PDF, dựng lại mục lục lượt hai. Kết quả được chép vào chính thư mục này.
+Dây chuyền gồm bảy bước: tạo tệp mẫu định dạng, ghép bản thảo, chuyển sang Word, dựng mục lục lượt một, dò số trang thật từ bản PDF, dựng lại mục lục lượt hai, chuẩn hóa OOXML cho Microsoft Word. Kết quả được chép vào chính thư mục này.
 
 Yêu cầu công cụ: `pandoc`, `python3` kèm `python-docx`, `libreoffice`, `poppler-utils`.
