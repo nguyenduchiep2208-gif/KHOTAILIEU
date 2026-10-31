@@ -11,8 +11,12 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Pt
 
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import bo_tai_lieu  # noqa: E402
+
 PAGEMAP = Path("pagemap.json")
-OUTNAME = "SO TAY DIEU TRA VIEN.docx"
+OUTNAME = bo_tai_lieu.lay()["ten_tep"] + ".docx"
 
 # ---- Danh muc tieu de tu combined.md ----
 entries = []

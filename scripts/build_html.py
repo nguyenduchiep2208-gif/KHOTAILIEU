@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Dung ban HTML tra cuu offline cho So tay Dieu tra vien."""
+"""Dung ban HTML tra cuu offline cho mot bo tai lieu trong kho.
+
+Bo tai lieu chon bang bien moi truong BO (mac dinh: SO-TAY-DIEU-TRA-VIEN),
+vi du: BO=TOI-PHAM-DAU-THAU python3 scripts/build_html.py
+"""
 import html as htmlmod
 import json
 import re
@@ -7,7 +11,11 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent / "SO-TAY-DIEU-TRA-VIEN"
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import bo_tai_lieu  # noqa: E402
+
+ROOT = bo_tai_lieu.thu_muc()
 OUT = ROOT / "html"
 TPL = OUT / "assets" / "template.html"
 
@@ -26,15 +34,20 @@ TAGS = {
     "MỚI 2021": "tag-new",
     "MỚI 2025": "tag-new",
     "MỚI 2026": "tag-new",
+    "TP.HCM": "tag-hcm",
+    "KINH NGHIỆM": "tag-tip",
 }
 
 
+KIND = {"PHẦN": "Phần", "PHỤ LỤC": "Phụ lục", "CHƯƠNG": "Chương"}
+
+
 def short_title(full: str) -> str:
-    """'PHẦN 07. BIỆN PHÁP NGĂN CHẶN' -> 'Phần 07'."""
-    m = re.match(r"(PHẦN|PHỤ LỤC)\s+([0-9A-F]+)", full)
+    """'PHẦN 07. BIỆN PHÁP NGĂN CHẶN' -> 'Phần 07'; 'CHƯƠNG MỞ ĐẦU. ...' -> 'Chương mở đầu'."""
+    m = re.match(r"(PHẦN|PHỤ LỤC|CHƯƠNG)\s+([0-9A-Z]+\b|MỞ ĐẦU)", full)
     if m:
-        kind = "Phần" if m.group(1) == "PHẦN" else "Phụ lục"
-        return f"{kind} {m.group(2)}"
+        num = "mở đầu" if m.group(2) == "MỞ ĐẦU" else m.group(2)
+        return f"{KIND[m.group(1)]} {num}"
     return full[:28]
 
 

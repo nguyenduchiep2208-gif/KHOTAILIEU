@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Doc PDF luot 1, lap bang tieu de -> so trang (doi chieu theo dong)."""
-import json, re, subprocess
+import json, re, subprocess, sys
 from pathlib import Path
 
-PDF = "SO TAY DIEU TRA VIEN.pdf"
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import bo_tai_lieu  # noqa: E402
+
+PDF = bo_tai_lieu.lay()["ten_tep"] + ".pdf"
 n = int(re.search(r"Pages:\s+(\d+)",
         subprocess.run(["pdfinfo", PDF], capture_output=True, text=True).stdout).group(1))
 

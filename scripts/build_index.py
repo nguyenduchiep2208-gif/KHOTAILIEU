@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
-"""Tao search-index.json va index.html tu cac trang HTML da dung."""
+"""Tao search-index.json va index.html tu cac trang HTML da dung.
+
+Bo tai lieu chon bang bien moi truong BO (mac dinh: SO-TAY-DIEU-TRA-VIEN).
+"""
 import html as H
 import json
 import re
+import sys
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "SO-TAY-DIEU-TRA-VIEN" / "html"
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import bo_tai_lieu  # noqa: E402
+
+CFG = bo_tai_lieu.lay()["html"]
+OUT = bo_tai_lieu.thu_muc() / "html"
 
 MAIN = sorted(p.name for p in OUT.glob("[0-9][0-9]-*.html"))
 PL = sorted(p.name for p in (OUT / "phu-luc").glob("PL-*.html"))
@@ -24,11 +33,14 @@ def clean(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+KIND = {"PHẦN": "Phần", "PHỤ LỤC": "Phụ lục", "CHƯƠNG": "Chương"}
+
+
 def short(full: str) -> str:
-    m = re.match(r"(PHẦN|PHỤ LỤC)\s+([0-9A-F]+)\.?\s*(.*)", full)
+    m = re.match(r"(PHẦN|PHỤ LỤC|CHƯƠNG)\s+([0-9A-Z]+\b|MỞ ĐẦU)\.?\s*(.*)", full)
     if m:
-        kind = "Phần" if m.group(1) == "PHẦN" else "Phụ lục"
-        return f"{kind} {m.group(2)}", m.group(3).strip()
+        num = "mở đầu" if m.group(2) == "MỞ ĐẦU" else m.group(2)
+        return f"{KIND[m.group(1)]} {num}", m.group(3).strip()
     return full, ""
 
 
@@ -66,37 +78,8 @@ for p in pages:
 print(f"Khop {ok}/{tot} lien ket muc")
 
 # ---------- index.html ----------
-GROUPS = [
-    ("Phần mở đầu", ["00"]),
-    ("Khối A. Nền tảng pháp lý và tổ chức", ["01", "02", "03", "04"]),
-    ("Khối B. Quy trình tố tụng", ["05", "06", "07", "08", "09", "10", "11", "12", "13"]),
-    ("Khối C. Chuyên đề điều tra", ["14", "15", "16", "17", "18"]),
-    ("Khối D. Kỹ năng và kỷ luật nghiệp vụ", ["19", "20", "21", "22"]),
-    ("Phụ lục tra cứu", ["PL"]),
-]
-
-QUICK = [
-    ("Vừa tiếp nhận tin báo, chưa rõ thẩm quyền", "05-tiep-nhan-giai-quyet-nguon-tin.html"),
-    ("Sắp hết thời hạn, cần tra mốc gia hạn", "phu-luc/PL-A-bang-tra-cuu-thoi-han.html"),
-    ("Việc phải làm trong 24 giờ đầu", "phu-luc/PL-C-checklist-tac-nghiep.html"),
-    ("Cần giữ người trong trường hợp khẩn cấp", "07-bien-phap-ngan-chan.html"),
-    ("Chuẩn bị khởi tố bị can", "06-khoi-to-vu-an-khoi-to-bi-can.html"),
-    ("Cần tạm giam, tra căn cứ Điều 119", "07-bien-phap-ngan-chan.html"),
-    ("Cần khám xét, tra thành phần bắt buộc", "09-cac-hoat-dong-dieu-tra.html"),
-    ("Cần phong tỏa tài khoản, kê biên tài sản", "08-bien-phap-cuong-che-ke-bien-phong-toa.html"),
-    ("Thu giữ điện thoại, máy tính, dữ liệu", "15-chuyen-de-chung-cu-dien-tu-tai-san-so.html"),
-    ("Phát hiện ví tài sản mã hóa", "15-chuyen-de-chung-cu-dien-tu-tai-san-so.html"),
-    ("Cần trưng cầu giám định, yêu cầu định giá", "11-giam-dinh-dinh-gia.html"),
-    ("Bị can là người dưới 18 tuổi", "17-chuyen-de-nguoi-chua-thanh-nien.html"),
-    ("Doanh nghiệp có dấu hiệu phạm tội", "16-chuyen-de-phap-nhan-thuong-mai.html"),
-    ("Tài sản, đối tượng ở nước ngoài", "18-thu-hoi-tai-san-hop-tac-quoc-te.html"),
-    ("Chuẩn bị kết thúc điều tra", "12-ket-thuc-dieu-tra.html"),
-    ("Viện kiểm sát trả hồ sơ điều tra bổ sung", "21-sai-sot-thuong-gap-phong-ngua.html"),
-    ("Bị can kêu oan, tố cáo bức cung", "22-dao-duc-nghe-nghiep-trach-nhiem-phap-ly.html"),
-    ("Tra văn bản đã bị thay thế", "phu-luc/PL-D-danh-muc-van-ban-phap-luat.html"),
-    ("Tra biểu mẫu theo giai đoạn", "phu-luc/PL-B-danh-muc-bieu-mau.html"),
-    ("Xem sơ đồ quy trình tố tụng", "phu-luc/PL-F-so-do-quy-trinh.html"),
-]
+GROUPS = CFG["groups"]
+QUICK = CFG["quick"]
 
 by_key = {}
 for p in pages:
@@ -126,14 +109,17 @@ quick_html = "".join(
 
 n_sec = tot
 n_pages = len(pages)
+badges_html = "\n".join(
+    f"    <span>{b.format(n_sec=n_sec, n_pages=n_pages)}</span>" for b in CFG["badges"]
+)
 
 doc = f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sổ tay Điều tra viên</title>
-<meta name="description" content="Sổ tay Điều tra viên: {n_pages} phần và phụ lục, {n_sec} mục tra cứu, cập nhật pháp luật tố tụng hình sự đến ngày 28/10/2026.">
+<title>{CFG["title"]}</title>
+<meta name="description" content="{CFG["description"].format(n_pages=n_pages, n_sec=n_sec)}">
 <link rel="stylesheet" href="assets/style.css">
 <style>
 body{{font-size:17px}}
@@ -186,27 +172,18 @@ ul.quick a:hover{{color:var(--accent)}}
 <body>
 <div class="home">
   <div class="hd">
-    <h1>Sổ tay Điều tra viên</h1>
-    <p class="sub">Tài liệu nghiệp vụ tra cứu, áp dụng pháp luật tố tụng hình sự</p>
+    <h1>{CFG["h1"]}</h1>
+    <p class="sub">{CFG["sub"]}</p>
   </div>
   <div class="meta">
-    <span>Phiên bản 1.0</span>
-    <span>Biên soạn 28/10/2026</span>
-    <span>Cập nhật pháp luật đến 28/10/2026</span>
-    <span>23 phần và 6 phụ lục</span>
-    <span>{n_sec} mục tra cứu</span>
+{badges_html}
   </div>
   <div class="warnbox">
-    <b>Cảnh báo sử dụng.</b> Đây là tài liệu tham khảo nghiệp vụ, không phải văn bản
-    quy phạm pháp luật và không thay thế văn bản quy phạm pháp luật. Trước khi ban hành
-    bất kỳ quyết định tố tụng nào, phải đối chiếu văn bản gốc trên Công báo hoặc Cơ sở
-    dữ liệu quốc gia về pháp luật và kiểm tra tình trạng hiệu lực. Các nội dung đánh dấu
-    <span class="tag tag-check">CẦN ĐỐI CHIẾU</span> là nội dung bắt buộc phải kiểm tra lại
-    văn bản gốc trước khi áp dụng.
+{CFG["warn"]}
   </div>
 
   <div class="searchbox">
-    <input id="q" type="search" autocomplete="off" placeholder="Tra cứu theo mục, ví dụ: thời hạn tạm giam, khám xét, kê biên, tài sản mã hóa, xử lý chuyển hướng">
+    <input id="q" type="search" autocomplete="off" placeholder="{CFG["placeholder"]}">
     <div id="res" role="listbox"></div>
   </div>
 
@@ -222,8 +199,7 @@ ul.quick a:hover{{color:var(--accent)}}
   </div>
 
   <div class="ft">
-    Tài liệu được biên soạn và lưu trữ phục vụ công tác nghiên cứu, tra cứu nghiệp vụ cá nhân.
-    Bản Markdown gốc nằm cùng thư mục để đọc trực tiếp trên GitHub.
+{CFG["footer"]}
   </div>
 </div>
 <script src="assets/app.js"></script>

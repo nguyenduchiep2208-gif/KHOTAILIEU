@@ -1,8 +1,5 @@
 # Tep trung gian cua day chuyen dung ban in, sinh lai bang ./build.sh
 combined.md
-raw.docx
-reference.docx
-ref-base.docx
 pagemap.json
+*.docx
 *.pdf
-SO TAY DIEU TRA VIEN.docx

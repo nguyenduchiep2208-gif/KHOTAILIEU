@@ -1,12 +1,20 @@
 #!/usr/bin/env python3
-"""Ghep 29 tep Markdown thanh mot ban thao cho Word."""
+"""Ghep cac tep Markdown cua mot bo tai lieu thanh mot ban thao cho Word.
+
+Bo tai lieu chon bang bien moi truong BO (mac dinh: SO-TAY-DIEU-TRA-VIEN).
+"""
 import re
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-SRC = next(p / "SO-TAY-DIEU-TRA-VIEN" for p in (HERE, *HERE.parents)
-           if (p / "SO-TAY-DIEU-TRA-VIEN").is_dir())
-OUT = Path(__file__).resolve().parent / "combined.md"
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(HERE.parent))
+import bo_tai_lieu  # noqa: E402
+
+CFG = bo_tai_lieu.lay()
+SRC = bo_tai_lieu.thu_muc()
+OUT = HERE / "combined.md"
 
 PAGEBREAK = '\n```{=openxml}\n<w:p><w:r><w:br w:type="page"/></w:r></w:p>\n```\n'
 
@@ -58,8 +66,14 @@ intro = flatten_links(strip_nav(intro))
 
 files = sorted(SRC.glob("[0-9][0-9]-*.md")) + sorted((SRC / "phu-luc").glob("PL-*.md"))
 
+# Trang ngan cach giua cac phan lon (neu bo tai lieu co cau hinh)
+NGAN_CACH = {pre: (title, note) for pre, title, note in CFG.get("ngan_cach", [])}
+
 chunks = [intro]
 for f in files:
+    sep = NGAN_CACH.get(f.name[:2]) if f.parent == SRC else None
+    if sep:
+        chunks.append(f"# {sep[0]}\n\n{sep[1]}\n")
     chunks.append(load(f))
 
 body = ("\n\n" + PAGEBREAK + "\n\n").join(chunks)

@@ -1,11 +1,17 @@
 #!/bin/bash
-# Dung ban Word va PDF cua So tay Dieu tra vien theo the thuc Nghi dinh 30/2020/ND-CP.
+# Dung ban Word va PDF cua mot bo tai lieu theo the thuc Nghi dinh 30/2020/ND-CP.
+# Cach dung: scripts/word/build.sh [TEN-BO]   (mac dinh: SO-TAY-DIEU-TRA-VIEN)
+#   vi du:   scripts/word/build.sh TOI-PHAM-DAU-THAU
 # Yeu cau: pandoc, python3 + python-docx, libreoffice (soffice), poppler-utils.
 set -e
 cd "$(dirname "$0")"
-DOCX="SO TAY DIEU TRA VIEN.docx"
-PDF="SO TAY DIEU TRA VIEN.pdf"
-DEST="$(cd ../.. && pwd)/SO-TAY-DIEU-TRA-VIEN/ban-in"
+export BO="${1:-SO-TAY-DIEU-TRA-VIEN}"
+NAME="$(python3 -I ../bo_tai_lieu.py "$BO" ten_tep)"
+META="$(python3 -I ../bo_tai_lieu.py "$BO" meta)"
+DOCX="$NAME.docx"
+PDF="$NAME.pdf"
+DEST="$(cd ../.. && pwd)/$BO/ban-in"
+echo "Bo tai lieu: $BO -> $DOCX"
 
 topdf() {               # soffice ghi de thang vao thu muc hien tai
   rm -f "$PDF"
@@ -17,7 +23,7 @@ topdf() {               # soffice ghi de thang vao thu muc hien tai
 echo "1. Tep mau dinh dang";  python3 -I mk_reference.py
 echo "2. Ghep ban thao";      python3 -I assemble.py
 echo "3. Chuyen sang Word";   LC_ALL=C.UTF-8 pandoc --from=gfm+raw_attribute --to=docx \
-  --reference-doc=reference.docx --toc --toc-depth=2 --metadata-file=meta.yaml \
+  --reference-doc=reference.docx --toc --toc-depth=2 --metadata-file="$META" \
   -o raw.docx combined.md 2>/dev/null
 echo "4. Luot 1: muc luc chua co so trang"; rm -f pagemap.json; python3 -I postprocess.py
 topdf
