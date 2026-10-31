@@ -1,5 +1,5 @@
 # Tep trung gian cua day chuyen dung ban in, sinh lai bang ./build.sh
 combined.md
-pagemap.json
+pagemap*.json
 *.docx
 *.pdf

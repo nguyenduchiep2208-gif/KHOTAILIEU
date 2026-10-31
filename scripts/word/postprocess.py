@@ -98,7 +98,9 @@ for idx, (lvl, text) in enumerate(entries):
     tabs.append(tab); ppr.append(tabs)
     add_text(p, text, bold=(lvl == 1), size=13)
     add_tab(p)
-    add_text(p, str(pages[idx]) if pages else "", bold=(lvl == 1), size=13)
+    # Luot 1 dung so trang tam "000" de dong muc luc dai bang luot sau,
+    # tranh lam muc luc dai them mot trang khi dien so that.
+    add_text(p, str(pages[idx]) if pages else "000", bold=(lvl == 1), size=13)
     sdt.addprevious(p)
 
 body.remove(sdt)

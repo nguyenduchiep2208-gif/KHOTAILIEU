@@ -12,7 +12,7 @@
 | Phạm vi | Giai đoạn tiếp nhận, giải quyết nguồn tin về tội phạm; khởi tố; điều tra; kết thúc điều tra |
 | Số phần chính | 23 phần |
 | Số phụ lục | 06 phụ lục |
-| Bản in | [Word](ban-in/SO%20TAY%20DIEU%20TRA%20VIEN.docx) và [PDF](ban-in/SO%20TAY%20DIEU%20TRA%20VIEN.pdf) 384 trang A4, thể thức Nghị định 30/2020/NĐ-CP |
+| Bản in | [Word](ban-in/SO%20TAY%20DIEU%20TRA%20VIEN.docx) và [PDF](ban-in/SO%20TAY%20DIEU%20TRA%20VIEN.pdf) 381 trang A4, thể thức Nghị định 30/2020/NĐ-CP |
 
 ---
 

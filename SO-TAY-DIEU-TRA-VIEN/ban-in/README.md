@@ -4,8 +4,8 @@ Thư mục này chứa bản dùng để in của Sổ tay Điều tra viên, tr
 
 | Tệp | Dung lượng | Dùng khi nào |
 |---|---|---|
-| [`SO TAY DIEU TRA VIEN.docx`](SO%20TAY%20DIEU%20TRA%20VIEN.docx) | 360 KB | Cần chỉnh sửa, thêm bớt nội dung, chèn con dấu hoặc chữ ký trước khi in |
-| [`SO TAY DIEU TRA VIEN.pdf`](SO%20TAY%20DIEU%20TRA%20VIEN.pdf) | 6,2 MB | In ngay, giữ nguyên trình bày trên mọi máy |
+| [`SO TAY DIEU TRA VIEN.docx`](SO%20TAY%20DIEU%20TRA%20VIEN.docx) | 361 KB | Cần chỉnh sửa, thêm bớt nội dung, chèn con dấu hoặc chữ ký trước khi in |
+| [`SO TAY DIEU TRA VIEN.pdf`](SO%20TAY%20DIEU%20TRA%20VIEN.pdf) | 6,1 MB | In ngay, giữ nguyên trình bày trên mọi máy |
 
 ## Thông số trình bày
 
@@ -21,7 +21,7 @@ Thư mục này chứa bản dùng để in của Sổ tay Điều tra viên, tr
 | Tiêu đề phần | In đậm, màu đen, mỗi phần bắt đầu ở một trang mới |
 | Bảng biểu | Có đường kẻ đầy đủ, chữ cỡ 11, dòng tiêu đề in đậm và lặp lại khi bảng sang trang |
 | Sơ đồ | Phông Courier New cỡ 9 để giữ đúng khung và đường nối |
-| Tổng số trang | 384 trang |
+| Tổng số trang | 381 trang |
 | Mục lục | 328 dòng, có số trang thật |
 
 ## Lưu ý khi in

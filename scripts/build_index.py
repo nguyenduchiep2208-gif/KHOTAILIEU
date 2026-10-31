@@ -39,8 +39,9 @@ KIND = {"PHẦN": "Phần", "PHỤ LỤC": "Phụ lục", "CHƯƠNG": "Chương"
 def short(full: str) -> str:
     m = re.match(r"(PHẦN|PHỤ LỤC|CHƯƠNG)\s+([0-9A-Z]+\b|MỞ ĐẦU)\.?\s*(.*)", full)
     if m:
-        num = "mở đầu" if m.group(2) == "MỞ ĐẦU" else m.group(2)
-        return f"{KIND[m.group(1)]} {num}", m.group(3).strip()
+        if m.group(2) == "MỞ ĐẦU":
+            return "Mở đầu", m.group(3).strip()
+        return f"{KIND[m.group(1)]} {m.group(2)}", m.group(3).strip()
     return full, ""
 
 

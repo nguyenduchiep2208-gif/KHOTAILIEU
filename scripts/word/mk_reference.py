@@ -30,6 +30,15 @@ def font(st, name=SERIF, size=None, bold=None, italic=None, color=None):
         rf = rpr.makeelement(qn("w:rFonts"), {}); rpr.insert(0, rf)
     for a in ("w:ascii", "w:hAnsi", "w:cs", "w:eastAsia"):
         rf.set(qn(a), name)
+    drop_theme(rf)
+
+
+def drop_theme(rf):
+    """Bo phong theo chu de (asciiTheme...), vi chung uu tien hon ten phong
+    cu the, lam tieu de hien thi bang Calibri/Carlito thay vi Times New Roman."""
+    for a in ("w:asciiTheme", "w:hAnsiTheme", "w:eastAsiaTheme", "w:cstheme"):
+        if rf.get(qn(a)) is not None:
+            del rf.attrib[qn(a)]
 
 
 def para(st, before=0, after=6, line=1.15, first=None, left=None, align=None, keep=False):
@@ -43,6 +52,14 @@ def para(st, before=0, after=6, line=1.15, first=None, left=None, align=None, ke
 
 
 J, C, L = WD_ALIGN_PARAGRAPH.JUSTIFY, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.LEFT
+
+# Phong mac dinh cua tai lieu (docDefaults) cung la Times New Roman
+_dd = doc.styles.element.find(qn("w:docDefaults"))
+if _dd is not None:
+    for _rf in _dd.iter(qn("w:rFonts")):
+        for _a in ("w:ascii", "w:hAnsi", "w:cs", "w:eastAsia"):
+            _rf.set(qn(_a), SERIF)
+        drop_theme(_rf)
 
 font(ST["Normal"], SERIF, 14)
 para(ST["Normal"], 0, 6, 1.15, first=1.0, align=J)
